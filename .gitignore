@@ -1,0 +1,6 @@
+*.iml
+.idea/modules.xml
+*.xml
+out/production/DiscordBotnet/Bot.class
+*.class
+out/production/DiscordBotnet/assets/tokens.txt
