@@ -25,7 +25,7 @@ public class EventListener implements net.dv8tion.jda.core.hooks.EventListener{
 
             if (((MessageReceivedEvent) e).isFromType(ChannelType.PRIVATE)) {
                 if (((MessageReceivedEvent) e).getAuthor() != getJda().getSelfUser())
-                ((MessageReceivedEvent) e).getChannel().sendMessage("Hello, Fuck you").queue();
+                ((MessageReceivedEvent) e).getChannel().sendMessage("hihihihiihi").queue();
             }
 
             if (((MessageReceivedEvent) e).isFromType(ChannelType.TEXT)) {
