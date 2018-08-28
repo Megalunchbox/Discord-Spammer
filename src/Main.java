@@ -8,10 +8,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 
 public class Main {
 
     public static ArrayList<Bot> bots = new ArrayList<>();
+    public static String path = "tokens.txt";
 
     public static void main(String[] args) throws IOException {
 
@@ -22,7 +24,7 @@ public class Main {
 
             String readLine = "";
 
-            System.out.println("Reading file using Buffered Reader");
+            System.out.println("getting tokens");
 
             while ((readLine = b.readLine()) != null) {
                 Bot c = new Bot(readLine);
@@ -32,22 +34,16 @@ public class Main {
         } catch (IOException e) {
             System.out.println(e.getStackTrace().toString());
         }
-
-
-      /*  for (int i = 0; i > 9000 ; i++ ) {
-            for(Bot j : bots) {
-                if (!j.getJda().getGuilds().isEmpty()) {
-                    Guild versai = j.getJda().getGuilds().get(0);
-                    List<TextChannel> channels = versai.getTextChannels();
-                    for (TextChannel channel : channels) {
-                        if (channel.canTalk()) {
-                                channel.sendMessage("megalunchbox and datpigmaster are god.").queue();
-                        }
-                    }
-                }
-            }
-        }
-*/
-
     }
+    
+    
+    public File getRunningJarDirectory() {
+        return new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath());
+    }
+    
+    public void setTokenPath(String path) {
+       this.path = path;
+    }
+    
+    
 }
