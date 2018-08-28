@@ -48,6 +48,9 @@ public class Main {
     public static void setTokenPath(String path) {
        this.path = path;
     }
+    public static String getTokenPath() {
+        return this.path;
+    }
     
     public static boolean isRunningFromJar() {
            String className = this.getClass().getName().replace('.', '/');
