@@ -38,7 +38,7 @@ public class EventListener implements net.dv8tion.jda.core.hooks.EventListener{
                 for (TextChannel channel : channels) {
                     if (channel.canTalk()) {
                         if (message.toLowerCase().equals("barrage incoming") || message.toLowerCase().equals("barrage commencing") || message.toLowerCase().equals("go")) {
-                            channel.sendMessage("Fuck you mother").queue();
+                            channel.sendMessage("spamspamspamspamspamspamspamspam").queue();
                             channel.sendMessage("barrage commencing").queue();
                             List<Member> members = guild.getMembers();
                             Random rand = new Random();
