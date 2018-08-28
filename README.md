@@ -9,6 +9,7 @@ Program used for automated spamming with your discord account(s)
 
 - Make it work via jar file by creating a token.txt in whatever folder it is in
 - (Long term) find a way to make accounts automatically join the server you are trying to spam.
+- choosing the spam message.
 
 # How to use
 
