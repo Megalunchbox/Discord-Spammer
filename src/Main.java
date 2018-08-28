@@ -19,7 +19,11 @@ public class Main {
 
 
         try {
-            File f = new File("src/assets/tokens.txt");
+            if (isRunningFromJar()) {
+                File f = new File(getRunningJarDirectory().getParent() + File.seperator + path);
+            } else {
+                File f = new File("src/assets/tokens.txt");
+            }
             BufferedReader b = new BufferedReader(new FileReader(f));
 
             String readLine = "";
@@ -37,13 +41,22 @@ public class Main {
     }
     
     
-    public File getRunningJarDirectory() {
+    public static File getRunningJarDirectory() {
         return new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getPath());
     }
     
-    public void setTokenPath(String path) {
+    public static void setTokenPath(String path) {
        this.path = path;
     }
+    
+    public static boolean isRunningFromJar() {
+           String className = this.getClass().getName().replace('.', '/');
+           String classJar = this.getClass().getResource("/" + className + ".class").toString();
+        
+            if (classJar.startsWith("jar:")) {
+                return true;
+            } else return false;
+  }
     
     
 }
